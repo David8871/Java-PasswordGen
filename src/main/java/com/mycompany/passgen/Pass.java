@@ -4,6 +4,7 @@
  */
 package com.mycompany.passgen;
 
+import java.awt.event.ActionEvent;
 import java.util.Random;
 
 /**
@@ -48,29 +49,28 @@ public class Pass extends javax.swing.JFrame {
         jCheckBox3 = new javax.swing.JCheckBox();
         jButton1 = new javax.swing.JButton();
         jCheckBox4 = new javax.swing.JCheckBox();
-        jCheckBox5 = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Pass gen");
+        jLabel1.setText("Parola dvs. este: ");
 
         TextGen.setText("jTextField1");
         TextGen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-
+                
             }
         });
 
-        jCheckBox1.setText("Nr 5");
+        jCheckBox1.setText("Mix");
         jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCheckBox1ActionPerformed(evt);
             }
         });
 
-        jCheckBox2.setText("Nr10");
+        jCheckBox2.setText("Numere");
 
-        jCheckBox3.setText("Nr15");
+        jCheckBox3.setText("Nr. de caractere 5");
         jCheckBox3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCheckBox3ActionPerformed(evt);
@@ -84,9 +84,15 @@ public class Pass extends javax.swing.JFrame {
             }
         });
 
-        jCheckBox4.setText("Number");
+        jCheckBox4.setText("Nr. de caractere 10");
+        jCheckBox4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox4ActionPerformed(evt);
+            }
 
-        jCheckBox5.setText("Special");
+            private void jCheckBox4ActionPerformed(ActionEvent evt) {
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -97,41 +103,38 @@ public class Pass extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(210, 210, 210)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jCheckBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TextGen, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton1)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jCheckBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jCheckBox5, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jCheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(111, 111, 111)
-                                    .addComponent(jCheckBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addComponent(jCheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(101, 101, 101)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jCheckBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jCheckBox4)))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(231, 231, 231)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(141, Short.MAX_VALUE))
+                        .addGap(183, 183, 183)
+                        .addComponent(jLabel1)
+                        .addGap(39, 39, 39)
+                        .addComponent(TextGen, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(99, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(83, 83, 83)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(TextGen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(51, 51, 51)
+                .addGap(120, 120, 120)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(TextGen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addGap(48, 48, 48)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jCheckBox1)
-                    .addComponent(jCheckBox4))
+                    .addComponent(jCheckBox3))
                 .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jCheckBox2)
-                    .addComponent(jCheckBox5))
-                .addGap(33, 33, 33)
-                .addComponent(jCheckBox3)
-                .addGap(32, 32, 32)
+                    .addComponent(jCheckBox4))
+                .addGap(85, 85, 85)
                 .addComponent(jButton1)
                 .addContainerGap(149, Short.MAX_VALUE))
         );
@@ -151,16 +154,19 @@ public class Pass extends javax.swing.JFrame {
         // TODO add your handling code here:
          if (jCheckBox1.isSelected()) {
 
-
-             String combination = num+lowerchar;
+             int lan = 7;
+             char ch  = 7;
+             Random r = new Random();
+             String mix = "asdfghjklqwertyuiopzxcvbnm0123456789";
+             StringBuilder str = new StringBuilder();
 
              while (0 < lan--){
 
-             str.append(num.charAt(r.nextInt(num.length())));}
+             str.append(mix.charAt(r.nextInt(mix.length())));}
              TextGen.setText(str.toString());
          } else if (jCheckBox2.isSelected()) {
 
-             //String num = "0123456789";
+
              int lan = 7;
              char ch  = 7;
              Random r = new Random();
@@ -170,27 +176,31 @@ public class Pass extends javax.swing.JFrame {
                  str.append(num.charAt(r.nextInt(num.length())));}
              TextGen.setText(str.toString());
          } else if (jCheckBox3.isSelected()){
-             PassGenerator(15);
-         } else if (jCheckBox4.isSelected()){
              PassGenerator(5);
+         } else if (jCheckBox4.isSelected()){
+             PassGenerator(10);
          }
          else {
-             PassGenerator(2);
+             PassGenerator(3);
          }
          }//GEN-LAST:event_jButton1ActionPerformed
 
     public void PassGenerator(int len) {//GEN-FIRST:event_TextGenActionPerformed
         // TODO add your handling code here:
 //GEN-LAST:event_TextGenActionPerformed
-
         len = 8;
         while (0 < len--) {
             str.append(lowerchar.charAt(r.nextInt(lowerchar.length())));
 
-            }
+        }
         TextGen.setText(str.toString());
+    //private void jCheckBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox4ActionPerformed
 
-    }
+
+
+
 
     /**
      * @param args the command line arguments
@@ -240,7 +250,6 @@ public class Pass extends javax.swing.JFrame {
     private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JCheckBox jCheckBox3;
     private javax.swing.JCheckBox jCheckBox4;
-    private javax.swing.JCheckBox jCheckBox5;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
